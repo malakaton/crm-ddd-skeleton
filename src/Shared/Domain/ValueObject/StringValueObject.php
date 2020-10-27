@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\src\Shared\Domain;
+namespace App\src\Shared\Domain\ValueObject;
 
 abstract class StringValueObject
 {

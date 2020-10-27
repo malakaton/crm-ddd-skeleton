@@ -4,10 +4,11 @@ declare(strict_types=1);
 
 namespace App\src\ModuleName\Application\UseCase;
 
-use App\src\Interaction\Domain\InteractionRepository;
+use App\src\Interaction\Domain\Params;
 use App\src\ModuleName\Domain\ModelCreator as DomainModelCreator;
 use App\src\ModuleName\Domain\ModelRepository;
 use App\src\ModuleName\Domain\ValueObjectAttribute;
+use App\src\Shared\Infrastructure\Guzzle\GuzzleInteractionRepository;
 
 /**
  * Class UseCaseBuilder
@@ -26,16 +27,17 @@ final class UseCaseBuilder
     private DomainModelCreator $creator;
 
     public function __construct(
-        InteractionRepository $interactionCreator,
+        GuzzleInteractionRepository $guzzleRepository,
         ModelRepository $modelRepository
     ) {
-        $this->creator = new DomainModelCreator($interactionCreator, $modelRepository);
+        $this->creator = new DomainModelCreator($guzzleRepository, $modelRepository);
     }
 
     public function __invoke(
-        ValueObjectAttribute $attribute
+        ValueObjectAttribute $attribute,
+        Params $interactionParams
     ): void
     {
-        $this->creator->__invoke($attribute);
+        $this->creator->__invoke($attribute, $interactionParams);
     }
 }

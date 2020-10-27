@@ -2,10 +2,9 @@
 
 declare(strict_types=1);
 
-namespace BooksManagement\Book\Application\Create;
+namespace App\src\ModuleName\Application\UseCase;
 
-use App\src\ModuleName\Application\UseCase\UseCaseBuilder;
-use App\src\ModuleName\Application\UseCase\UseCaseCommand;
+use App\src\Interaction\Domain\Params;
 use App\src\ModuleName\Domain\ValueObjectAttribute;
 
 final class UseCaseCommandHandler
@@ -25,8 +24,9 @@ final class UseCaseCommandHandler
     public function handle(UseCaseCommand $command): ?ValueObjectAttribute
     {
         $attribute = new ValueObjectAttribute($command->attribute());
+        $interactionParams = new Params([$command->attribute()]);
 
-        $this->useCaseBuilder->__invoke($attribute);
+        $this->useCaseBuilder->__invoke($attribute, $interactionParams);
 
         return null;
     }
