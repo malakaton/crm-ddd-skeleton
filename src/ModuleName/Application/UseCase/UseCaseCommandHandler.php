@@ -26,7 +26,6 @@ final class UseCaseCommandHandler
     {
         $attribute = new ValueObjectAttribute($command->attribute());
 
-        // ToDo: Create service to execute all logical process to invoke the use case
         $this->useCaseBuilder->__invoke($attribute);
 
         return null;
