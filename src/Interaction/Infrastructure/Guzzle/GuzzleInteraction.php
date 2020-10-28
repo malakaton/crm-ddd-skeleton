@@ -6,7 +6,7 @@ namespace App\src\Interaction\Infrastructure\Guzzle;
 
 use App\src\Interaction\Domain\Params;
 use App\src\Shared\Infrastructure\Guzzle\GuzzleConnection;
-use App\src\Shared\Infrastructure\Guzzle\GuzzleInteractionRepository;
+use App\src\Interaction\Domain\GuzzleInteractionRepository;
 
 final class GuzzleInteraction extends GuzzleConnection implements GuzzleInteractionRepository
 {
