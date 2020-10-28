@@ -8,7 +8,7 @@ use App\src\Interaction\Domain\Params;
 use App\src\ModuleName\Domain\ModelCreator as DomainModelCreator;
 use App\src\ModuleName\Domain\ModelRepository;
 use App\src\ModuleName\Domain\ValueObjectAttribute;
-use App\src\Shared\Infrastructure\Guzzle\GuzzleInteractionRepository;
+use App\src\Interaction\Domain\GuzzleInteractionRepository;
 
 /**
  * Class UseCaseBuilder
