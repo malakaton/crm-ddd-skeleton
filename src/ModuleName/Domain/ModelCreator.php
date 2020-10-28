@@ -6,7 +6,7 @@ namespace App\src\ModuleName\Domain;
 
 use App\src\Interaction\Domain\Params;
 use App\src\Interaction\Infrastructure\Interaction;
-use App\src\Shared\Infrastructure\Guzzle\GuzzleInteractionRepository;
+use App\src\Interaction\Domain\GuzzleInteractionRepository;
 
 final class ModelCreator
 {
